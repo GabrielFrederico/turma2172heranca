@@ -9,17 +9,18 @@ package br.com.satc.objeto;
  *
  * @author markson
  */
-public class Funcionario {
+public class Funcionario extends Pessoa {
         
         private String cargo;
         private float salario, valorHora, qtdeHora;
         //implementar um método para calcular o salario com base na hora e no valor da hora
 
-    public Funcionario(String cargo, float valorHora, float qtdeHora) {
+    public Funcionario(String cargo, float salario, float valorHora, float qtdeHora, String nome, String rg, String cpf) {
+        super(nome, rg, cpf);
         this.cargo = cargo;
+        this.salario = salario;
         this.valorHora = valorHora;
         this.qtdeHora = qtdeHora;
-        this.salario = calculaSalario(valorHora, qtdeHora);
     }
     
     public float calculaSalario(float valorHora, float qtdeHora) {

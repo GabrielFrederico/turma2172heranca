@@ -5,21 +5,22 @@
  */
 package br.com.satc;
 
+import br.com.satc.objeto.Cliente;
 import br.com.satc.objeto.Funcionario;
+import java.util.Date;
 
 /**
  *
  * @author gabriel.155317
  */
-public class MainCalculaSalario {
+public class Main {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Funcionario funcionario = new Funcionario("Professor", 20, 20, 20, "Markson", "123", "321");
-        
-        System.out.println(funcionario.getSalario());
+        Funcionario f = new Funcionario(cargo, 0, 0, 0, nome, "123", "321")
+        Cliente c = new Cliente(dataCadastro, "Gabriel", "123", "321");
     }
     
 }
