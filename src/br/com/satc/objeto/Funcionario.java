@@ -1,4 +1,4 @@
-/*
+    /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -15,15 +15,18 @@ public class Funcionario {
         private float salario, valorHora, qtdeHora;
         //implementar um método para calcular o salario com base na hora e no valor da hora
 
+        public static Float calculaSalario(Float qtdHora, Float valorHora) {
+            
+            Float salarioBruto = qtdHora * valorHora;
+            return salarioBruto;
+        }
+        
     public Funcionario(String cargo, float valorHora, float qtdeHora) {
         this.cargo = cargo;
         this.valorHora = valorHora;
         this.qtdeHora = qtdeHora;
     }
-
-        
-        
-        
+    
     public String getCargo() {
         return cargo;
     }

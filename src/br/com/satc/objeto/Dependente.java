@@ -5,6 +5,7 @@
  */
 package br.com.satc.objeto;
 
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -21,10 +22,9 @@ public class Dependente extends Pessoa{
         super(nome, rg, cpf);
         this.responsavel = responsavel;
         this.dataNascimento = dataNascimento;
+        this.idade = calculaIdade(dataNascimento);
     }
 
-    
-    
     public Cliente getResponsavel() {
         return responsavel;
     }
@@ -49,5 +49,24 @@ public class Dependente extends Pessoa{
         this.idade = idade;
     }
     
-    
+    public static int calculaIdade(java.util.Date dataNasc) {
+
+    Calendar dataNascimento = Calendar.getInstance();  
+    dataNascimento.setTime(dataNasc); 
+    Calendar hoje = Calendar.getInstance();  
+
+    int idade = hoje.get(Calendar.YEAR) - dataNascimento.get(Calendar.YEAR); 
+
+    if (hoje.get(Calendar.MONTH) < dataNascimento.get(Calendar.MONTH)) {
+      idade--;  
+    } 
+    else 
+    { 
+        if (hoje.get(Calendar.MONTH) == dataNascimento.get(Calendar.MONTH) && hoje.get(Calendar.DAY_OF_MONTH) < dataNascimento.get(Calendar.DAY_OF_MONTH)) {
+            idade--; 
+        }
+    }
+
+    return idade;
+    }
 }

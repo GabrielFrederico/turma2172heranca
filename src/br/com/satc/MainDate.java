@@ -5,6 +5,7 @@
  */
 package br.com.satc;
 
+import static br.com.satc.objeto.Dependente.calculaIdade;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -27,8 +28,12 @@ public class MainDate {
         Date nascimento = new Date();
 
         SimpleDateFormat conversor = new SimpleDateFormat("dd/MM/yyyy");
-        nascimento = conversor.parse("12/03/1991");
-        JOptionPane.showMessageDialog(null, nascimento);
+        
+        String data;
+        data = JOptionPane.showInputDialog("Digite a data de nascimento: ");
+        Date dataNascimento = conversor.parse(data);
+        int idade = calculaIdade(dataNascimento);
+        JOptionPane.showMessageDialog(null, "A idade é: "+idade);
     }
 
 }
